@@ -47,18 +47,24 @@ const Index = () => {
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-black/15" />
         <div className="container-tight relative z-10 py-24 text-center text-white">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium tracking-wider uppercase mb-6 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+            
             Trusted Across the Gulf Region
           </div>
           <h1 className="text-balance text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] max-w-5xl mx-auto animate-fade-in">
             Specialists in Marine & Port Trading Solutions
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/80 italic max-w-2xl mx-auto animate-fade-in">
-            "Empowering Ports. Supporting Ships. Trading with Integrity. Safer Dives. Stronger Operations."
-          </p>
+          <div className="mt-6 max-w-3xl mx-auto text-white/80 italic max w-2xl mx auto animate-fade-in">
+  <ul className="flex flex-wrap justify-center gap-x-3 gap-y-0.2 text-base md:text-lg font-small">
+    <li>• Empowering Ports</li>
+    <li>• Supporting Ships</li>
+    <li>• Trading with Integrity</li>
+    <li>• Safer Diving Operations</li>
+    <li>• Reliable Marine Solutions</li>
+  </ul>
+</div>
 
           <div className="mt-10 max-w-3xl mx-auto animate-fade-in">
             <SearchBar />
@@ -69,8 +75,15 @@ const Index = () => {
               <Link to="/shop">Browse Catalog <ArrowRight className="ml-1 w-4 h-4" /></Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full h-12 px-7 bg-white/5 border-white/30 text-white hover:bg-white hover:text-brand-navy">
-              <Link to="/contact">Request a Quote</Link>
-            </Button>
+             
+  <a
+    href="https://mafjar.com/forms/mafjar-inquery-form.html"
+  
+    rel="noopener noreferrer"
+  >
+    Request a Quote
+  </a>
+</Button>
           </div>
         </div>
       </section>
@@ -194,9 +207,19 @@ const Index = () => {
         <div className="container-tight text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">Ready to discuss your marine equipment needs?</h2>
           <p className="text-white/70 mb-8">Our expert team is ready to source the right equipment for your operations.</p>
-          <Button asChild size="lg" className="bg-brand-red hover:bg-brand-red-hover text-white rounded-full h-12 px-8">
-            <Link to="/contact">Request a Quote</Link>
-          </Button>
+         <Button
+  asChild
+  size="lg"
+  className="bg-brand-red hover:bg-brand-red-hover text-white rounded-full h-12 px-8"
+>
+  <a
+    href="https://mafjar.com/forms/mafjar-inquery-form.html"
+  
+    rel="noopener noreferrer"
+  >
+    Request a Quote
+  </a>
+</Button>
         </div>
       </section>
     </>

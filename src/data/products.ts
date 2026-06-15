@@ -3,13 +3,15 @@ import portImg from "@/assets/products/port-equipment.jpg";
 import divingImg from "@/assets/products/diving-equipment.jpg";
 import industrialImg from "@/assets/products/industrial-support.jpg";
 import controlImg from "@/assets/products/control-systems.png";
+import gasDetectorImg from "@/assets/products/GasDT01.jpg";
 
 export type Category =
   | "Marine Equipment"
   | "Port Equipment"
   | "Diving Equipment"
   | "Industrial Support"
-  | "Control Systems";
+  | "Control Systems"
+  | "Gas Detectors";
 
 export interface Product {
   id: string;
@@ -30,6 +32,7 @@ const img: Record<Category, string> = {
   "Diving Equipment": divingImg,
   "Industrial Support": industrialImg,
   "Control Systems": controlImg,
+  "Gas Detectors": gasDetectorImg
 };
 
 export const PRODUCTS: Product[] = [
@@ -52,7 +55,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "port-crane-001",
-    name: "Heavy-Duty Port Crane",
+    name: "Heavy-Duty Port Cranes",
     category: "Port Equipment",
     price: 128000,
     image: img["Port Equipment"],
@@ -85,22 +88,22 @@ export const PRODUCTS: Product[] = [
     inStock: true,
   },
   {
-    id: "industrial-weld-001",
-    name: "Industrial Marine Welding Tool",
-    category: "Industrial Support",
-    price: 1280,
-    image: img["Industrial Support"],
-    shortDescription: "High-performance welding equipment for marine applications",
-    description:
-      "Waterproof, high-temperature welding tool engineered for shipyard and offshore platform fabrication and repair.",
-    features: ["Waterproof Design", "High Temperature", "Portable", "Inverter Powered"],
-    specs: [
-      { label: "Output", value: "200 A" },
-      { label: "Duty Cycle", value: "60% @ 200A" },
-      { label: "Weight", value: "8.4 kg" },
-    ],
-    inStock: true,
-  },
+  id: "industrial-weld-001",
+  name: "GAS DETECTORS",
+  category: "Gas Detectors",
+  price: 1280,
+  image: img["Gas Detectors"],   // ✅ FIXED
+  shortDescription: "High-performance gas detection equipment for marine applications",
+  description:
+    "The easy-to-wear, slim and compact GasAlertMicroClip provides affordable protection from atmospheric gas hazards. For standard operation with features, you can count on, opt for the GasAlertMicroClip XT. For extended battery life, especially in cold weather, choose the GasAlertMicroClip XL. Both offer visual compliance at a glance with the flashing, green IntelliFlash™. Easy one-button operation reduces training time and lets workers focus on the job at hand",
+  features: ["Waterproof Design", "High Temperature", "Portable", "Inverter Powered"],
+  specs: [
+    { label: "Manufacturer", value: "HONEYWELL" },
+    { label: "Model", value: "GasAlertMicroClip XT" },
+    { label: "Weight", value: "8.4 kg" },
+  ],
+  inStock: true,
+},
   {
     id: "marine-engine-001",
     name: "Marine Engine Spare Parts Set",

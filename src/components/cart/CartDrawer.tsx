@@ -82,7 +82,9 @@ export const CartDrawer = () => {
               </div>
               <div className="text-xs text-muted-foreground">Shipping and taxes calculated at checkout.</div>
               <Button asChild className="w-full bg-brand-red hover:bg-brand-red-hover text-white rounded-full h-12" onClick={closeCart}>
-                <Link to="/checkout">Proceed to Checkout</Link>
+                <Link to="/auth?redirect=/checkout">
+  Proceed to Checkout
+</Link>
               </Button>
               <Button asChild variant="outline" className="w-full rounded-full" onClick={closeCart}>
                 <Link to="/shop">Continue Shopping</Link>

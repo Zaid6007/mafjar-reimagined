@@ -36,7 +36,7 @@ const ProductDetail = () => {
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div className="rounded-3xl overflow-hidden bg-secondary aspect-square shadow-card">
-              <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+              <img src={product.image} alt={product.name} className="w-full h-full " />
             </div>
             <div>
               <div className="text-xs uppercase tracking-[0.18em] text-brand-red font-semibold mb-3">{product.category}</div>

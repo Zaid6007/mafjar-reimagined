@@ -105,8 +105,15 @@ const Services = () => {
               <h2 className="text-3xl font-bold text-brand-navy mb-3">{active}</h2>
               <p className="text-muted-foreground mb-6">{c.tagline}</p>
               <Button asChild className="rounded-full bg-brand-red hover:bg-brand-red-hover text-white mb-8">
-                <Link to="/contact">Request Quote</Link>
-              </Button>
+               
+  <a
+    href="https://mafjar.com/forms/mafjar-inquery-form.html"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Request a Quote
+  </a>
+</Button>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 {c.sections.map((s) => (

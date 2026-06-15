@@ -5,6 +5,8 @@ import { useCart } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
+import logo1 from "@/assets/logo1.png";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -23,15 +25,29 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur-md border-b border-border">
       <div className="container-tight flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-3 group" aria-label="Mafjar Marine home">
-          <div className="w-11 h-11 rounded-full bg-brand-navy text-white flex items-center justify-center shadow-card group-hover:scale-105 transition-smooth">
-            <Anchor className="w-5 h-5" />
-          </div>
-          <div className="leading-tight">
-            <div className="font-bold text-brand-navy text-sm tracking-wide">MAFJAR MARINE</div>
-            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Trading & Services</div>
-          </div>
-        </Link>
+       <Link
+  to="/"
+  className="flex items-center justify-start gap-4 group w-full"
+  aria-label="Mafjar Marine home"
+>
+  {/* Logo 1 */}
+  <div className="h-14 flex items-center">
+    <img
+      src={logo}
+      alt="Mafjar Logo"
+      className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+
+  {/* Logo 2 */}
+  <div className="h-12 flex items-center">
+    <img
+      src={logo1}
+      alt="Mafjar Secondary Logo"
+      className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+</Link>
 
         <nav className="hidden lg:flex items-center gap-1">
           {NAV.map((n) => (
@@ -73,12 +89,19 @@ export const Header = () => {
               <UserIcon className="w-5 h-5" />
             </Button>
           </Link>
-          <Link to="/contact" className="hidden md:block">
+         
             <Button className="bg-brand-red hover:bg-brand-red-hover text-white rounded-full px-5">
-              Request a Quote
-            </Button>
-          </Link>
-          <Button
+            
+  <a
+    href="https://mafjar.com/forms/mafjar-inquery-form.html"
+  
+    rel="noopener noreferrer"
+  >
+    Request a Quote
+  </a>
+</Button>
+          
+                    <Button
             variant="ghost"
             size="icon"
             className="lg:hidden rounded-full"

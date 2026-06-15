@@ -1,20 +1,39 @@
 import { Link } from "react-router-dom";
 import { Anchor, Mail, MapPin, Phone } from "lucide-react";
-
+import logo from "@/assets/logo.png";
+import logo1 from "@/assets/logo1.png";
 export const Footer = () => (
   <footer className="bg-brand-navy-deep text-white/85 mt-24">
     <div className="container-tight py-16 grid gap-10 md:grid-cols-4">
       <div className="md:col-span-1">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-11 h-11 rounded-full bg-brand-red text-white flex items-center justify-center">
-            <Anchor className="w-5 h-5" />
-          </div>
+           <Link
+  to="/"
+  className="flex items-center justify-start gap-4 group w-full"
+  aria-label="Mafjar Marine home"
+>
+  {/* Logo 1 */}
+  <div className="h-full flex items-center">
+    <img
+      src={logo}
+      alt="Mafjar Logo"
+      className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+
+  {/* Logo 2 */}
+  <div className="h-full flex items-center">
+    <img
+      src={logo1}
+      alt="Mafjar Secondary Logo"
+      className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+</Link>
           <div className="leading-tight">
-            <div className="font-bold text-white text-sm">MAFJAR MARINE</div>
-            <div className="text-[10px] uppercase tracking-[0.18em] text-white/50">Trading & Services</div>
-          </div>
+              </div>
         </div>
-        <p className="text-sm leading-relaxed text-white/65">
+        <p className="text-sm leading-relaxed text-white/100">
           Specialists in marine and port trading solutions across the Gulf region.
         </p>
       </div>
