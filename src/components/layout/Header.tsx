@@ -95,7 +95,7 @@ export const Header = () => {
   <a
     href="https://mafjar.com/forms/mafjar-inquery-form.html"
   
-    rel="noopener noreferrer"
+    
   >
     Request a Quote
   </a>
