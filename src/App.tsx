@@ -16,7 +16,10 @@ import Checkout from "./pages/Checkout";
 import Auth from "./pages/Auth";
 import Account from "./pages/Account";
 import NotFound from "./pages/NotFound";
+import { HashRouter } from "react-router-dom";
 
+<HashRouter>
+</HashRouter>
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -24,7 +27,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <HashRouter>
         <AuthProvider>
           <CartProvider>
             <Routes>
@@ -43,7 +46,7 @@ const App = () => (
             </Routes>
           </CartProvider>
         </AuthProvider>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
