@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getProduct, formatPrice, PRODUCTS } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
-import { ArrowLeft, Check, Minus, Plus, ShieldCheck, ShoppingCart, Truck } from "lucide-react";
+import { ArrowLeft, Check, Download, Minus, Plus, ShieldCheck, ShoppingCart, Truck } from "lucide-react";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { toast } from "sonner";
 
@@ -33,11 +33,15 @@ const ProductDetail = () => {
           <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-brand-red mb-8">
             <ArrowLeft className="w-4 h-4" /> Back to shop
           </Link>
-
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
-            <div className="rounded-3xl overflow-hidden bg-secondary aspect-square shadow-card">
-              <img src={product.image} alt={product.name} className="w-full h-full " />
-            </div>
+</div>
+         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+         <div className="p-4 bg-white border rounded-xl shadow-md">
+  <img
+    src={product.image}
+    alt={product.name}
+    className="w-full max-h-[500px] object-contain rounded-lg"
+  />
+</div>
             <div>
               <div className="text-xs uppercase tracking-[0.18em] text-brand-red font-semibold mb-3">{product.category}</div>
               <h1 className="text-3xl md:text-4xl font-bold text-brand-navy text-balance">{product.name}</h1>
@@ -52,29 +56,53 @@ const ProductDetail = () => {
                 ))}
               </ul>
 
-              <div className="mt-8 flex items-center gap-4">
-                <div className="flex items-center border border-border rounded-full">
-                  <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="w-10 h-12 flex items-center justify-center hover:bg-secondary rounded-l-full" aria-label="Decrease quantity">
-                    <Minus className="w-4 h-4" />
-                  </button>
-                  <span className="w-10 text-center font-semibold">{qty}</span>
-                  <button onClick={() => setQty((q) => q + 1)} className="w-10 h-12 flex items-center justify-center hover:bg-secondary rounded-r-full" aria-label="Increase quantity">
-                    <Plus className="w-4 h-4" />
-                  </button>
-                </div>
-                <Button
-                  size="lg"
-                  className="flex-1 bg-brand-red hover:bg-brand-red-hover text-white rounded-full h-12"
-                  onClick={() => {
-                    addItem(product, qty);
-                    toast.success(`${product.name} added to cart`);
-                  }}
-                >
-                  <ShoppingCart className="w-4 h-4 mr-2" /> Add to Cart
-                </Button>
-              </div>
+              <div className="mt-8 space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center border border-border rounded-full">
+                    <button
+                      onClick={() => setQty((q) => Math.max(1, q - 1))}
+                      className="w-10 h-12 flex items-center justify-center hover:bg-secondary rounded-l-full"
+                      aria-label="Decrease quantity"
+                    >
+                      <Minus className="w-4 h-4" />
+                    </button>
 
-              <div className="mt-6 grid grid-cols-2 gap-3 text-xs">
+                    <span className="w-10 text-center font-semibold">{qty}</span>
+
+                    <button
+                      onClick={() => setQty((q) => q + 1)}
+                      className="w-10 h-12 flex items-center justify-center hover:bg-secondary rounded-r-full"
+                      aria-label="Increase quantity"
+                    >
+                      <Plus className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <Button
+                    size="lg"
+                    className="flex-1 bg-brand-red hover:bg-brand-red-hover text-white rounded-full h-12"
+                    onClick={() => {
+                      addItem(product, qty);
+                      toast.success(`${product.name} added to cart`);
+                    }}
+                  >
+                    <ShoppingCart className="w-4 h-4 mr-2" />
+                    Add to Cart
+                  </Button>
+                </div>
+
+              {product.brochure && (
+  <a
+    href={product.brochure}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 w-full h-12 mt-4 rounded-full border border-brand-red text-brand-red hover:bg-brand-red hover:text-white transition-all"
+  >
+    <Download className="w-4 h-4" />
+    Download Datasheet
+  </a>
+)}
+                            <div className="mt-6 grid grid-cols-2 gap-3 text-xs">
                 <div className="flex items-center gap-2 p-3 rounded-2xl bg-secondary/60">
                   <Truck className="w-4 h-4 text-brand-red" />
                   <span>Worldwide logistics</span>
@@ -101,18 +129,22 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {related.length > 0 && (
-        <section className="py-20">
-          <div className="container-tight">
-            <h2 className="text-2xl font-bold text-brand-navy mb-8">Related Products</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {related.map((p) => <ProductCard key={p.id} product={p} />)}
-            </div>
-          </div>
-        </section>
-      )}
-    </>
+    {related.length > 0 && (
+  <section className="py-20">
+    <div className="container-tight">
+      <h2 className="text-2xl font-bold text-brand-navy mb-8">
+        Related Products
+      </h2>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {related.map((p) => (
+          <ProductCard key={p.id} product={p} />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+</>
   );
 };
-
 export default ProductDetail;

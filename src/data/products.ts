@@ -2,23 +2,38 @@ import marineImg from "@/assets/products/marine-equipment.jpg";
 import portImg from "@/assets/products/port-equipment.jpg";
 import divingImg from "@/assets/products/diving-equipment.jpg";
 import industrialImg from "@/assets/products/industrial-support.jpg";
+import industrialImg2 from "@/assets/products/BC.jpg";
 import controlImg from "@/assets/products/control-systems.png";
 import gasDetectorImg from "@/assets/products/GasDT01.jpg";
-
+import gasDetector2Img from "@/assets/products/GS2.jpeg";
+import gasDetector3Img from "@/assets/products/EEBD.jpg";
+import gasDetector4Img from "@/assets/products/FGDS.jpg";
+import marineImg2 from "@/assets/products/EPIRB.jpg";
+import marineImg3 from "@/assets/products/Fixed VHF.jpg";
+import marineImg4 from "@/assets/products/Fixed VHF 2.jpg";
+import marineImg5 from "@/assets/products/FTB.jpg";
 export type Category =
   | "Marine Equipment"
   | "Port Equipment"
   | "Diving Equipment"
   | "Industrial Support"
+  | "Industrial Support2"
   | "Control Systems"
-  | "Gas Detectors";
-
+  | "Gas Detectors"
+  | "Gas Detectors2"
+  | "Gas Detectors3"
+  | "Gas Detectors4"
+  | "Marine Equipment2"
+  | "Marine Equipment3"
+  | "Marine Equipment4"
+  | "Marine Equipment5";
 export interface Product {
   id: string;
   name: string;
   category: Category;
   price: number;
   image: string;
+  brochure?: string;
   shortDescription: string;
   description: string;
   features: string[];
@@ -28,11 +43,19 @@ export interface Product {
 
 const img: Record<Category, string> = {
   "Marine Equipment": marineImg,
+  "Marine Equipment2": marineImg2,
   "Port Equipment": portImg,
   "Diving Equipment": divingImg,
   "Industrial Support": industrialImg,
+  "Industrial Support2": industrialImg2,
   "Control Systems": controlImg,
-  "Gas Detectors": gasDetectorImg
+  "Gas Detectors": gasDetectorImg,
+  "Gas Detectors2": gasDetector2Img,
+  "Gas Detectors3": gasDetector3Img,
+  "Gas Detectors4": gasDetector4Img,
+  "Marine Equipment3": marineImg3,
+  "Marine Equipment4": marineImg4,
+  "Marine Equipment5": marineImg5,
 };
 
 export const PRODUCTS: Product[] = [
@@ -92,16 +115,91 @@ export const PRODUCTS: Product[] = [
   name: "GAS DETECTORS",
   category: "Gas Detectors",
   price: 1280,
-  image: img["Gas Detectors"],   // ✅ FIXED
+  image: img["Gas Detectors"],
+  brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/GasAlertMaxXTIIDatasheet65700EN_0.pdf",
+
   shortDescription: "High-performance gas detection equipment for marine applications",
+
   description:
     "The easy-to-wear, slim and compact GasAlertMicroClip provides affordable protection from atmospheric gas hazards. For standard operation with features, you can count on, opt for the GasAlertMicroClip XT. For extended battery life, especially in cold weather, choose the GasAlertMicroClip XL. Both offer visual compliance at a glance with the flashing, green IntelliFlash™. Easy one-button operation reduces training time and lets workers focus on the job at hand",
+
   features: ["Waterproof Design", "High Temperature", "Portable", "Inverter Powered"],
+
   specs: [
     { label: "Manufacturer", value: "HONEYWELL" },
     { label: "Model", value: "GasAlertMicroClip XT" },
     { label: "Weight", value: "8.4 kg" },
   ],
+
+  inStock: true,
+},
+ {
+  id: "industrial-weld-002",
+  name: "GAS DETECTORS 02",
+  category: "Gas Detectors",
+  price: 180,
+  image: img["Gas Detectors2"],
+  brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/BW-Clip-Datasheet.pdf",
+
+  shortDescription: "High-performance gas detection equipment for marine applications",
+
+  description:
+    "The BW Clip Series of single-gas detectors provides up to three years maintenance-free operation: Just turn on the device and it runs continuously — no need for calibration, sensor replacement, battery replacement or battery charging. That means great reliability and no downtime. Plus, with the two-year version for H2S or CO, ",
+
+  features: ["Waterproof Design", "High Temperature", "Portable", "Inverter Powered"],
+
+  specs: [
+    { label: "Manufacturer", value: "HONEYWELL" },
+    { label: "Model", value: "BW CLIP" },
+    { label: "Weight", value: "1 kg" },
+  ],
+
+  inStock: true,
+},
+{
+  id: "industrial-weld-003",
+  name: "Emergency Escape Breathing Devices ",
+  category: "Gas Detectors",
+  price: 400,
+  image: img["Gas Detectors3"],
+  brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/eebd-emergency-escape-breathing-devices.pdf",
+
+  shortDescription: "High-performance gas detection equipment for marine applications",
+
+  description:
+    "TLight, compact and easy to use, our Emergency Escape Breathing Devices (EEBD) are perfectly adapted to confined spaces, marine, industrial and Oil & Gas applications. They are available with a duration from 10 to 20 minutes",
+
+  features: ["Waterproof Design", "High Temperature", "Portable", "Inverter Powered"],
+
+  specs: [
+    { label: "Manufacturer", value: "HONEYWELL" },
+    { label: "Model", value: "BIO-S-CAPE" },
+    { label: "Weight", value: "1 kg" },
+  ],
+
+  inStock: true,
+},
+{
+  id: "industrial-weld-004",
+  name: "FIXED GAS DETECTION SYSTEM ",
+  category: "Gas Detectors",
+  price: 400,
+  image: img["Gas Detectors4"],
+  brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/centr-PL4-dp2770-rev2.pdf",
+
+  shortDescription: "High-performance gas detection equipment for marine applications",
+
+  description:
+    "The PL4+ gas control unit represents the best technology for the detection of flammable, toxic or Oxygen compounds in small systems. The PL4+ has 4 analog 4-20 mA inputs that can be extended to 8 by using the 4-input expansion board PL4/ESP, easy to plug in the control unit.",
+
+  features: ["", ""],
+
+  specs: [
+    { label: "Manufacturer", value: "SENSITRON" },
+    { label: "Model", value: "PL4+" },
+    { label: "Weight", value: "4 kg" },
+  ],
+
   inStock: true,
 },
   {
@@ -121,6 +219,94 @@ export const PRODUCTS: Product[] = [
     ],
     inStock: true,
   },
+   {
+  id: "marine-engine-002",
+  name: "EPIRB ",
+  category: "Marine Equipment",
+  price: 300,
+  image: img["Marine Equipment2"],
+  brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/neb-2000.pdf",
+
+  shortDescription: "High-performance gas detection equipment for marine applications",
+
+  description:
+    "NSR's new generation of AIS EPIRB. Meet the latest IMO regulation  IMO MSC.471 (101). Built in GNSS receiver and AIS transmitter. Creative design for easy operation. Special lanyard for hands-free carry. Automatic power cut when test completed. Multiple protection to avoid false alerts. Lower power consumption for longer working hours. Automatic release device activated underwater 4 meters. Easily coding/reading user data with infrared communication technology. 406MHz transmission together with 121MHz.homing & AIS transmitter. RS type approved"
+  ,features: ["", ""],
+
+  specs: [
+    { label: "Manufacturer", value: "NSR" },
+    { label: "Model", value: "NEB 2000" },
+    { label: "Weight", value: "1 kg" },
+  ],
+
+  inStock: true,
+},
+ {
+  id: "marine-engine-003",
+  name: "Fixed VHF ",
+  category: "Marine Equipment",
+  price: 600,
+  image: img["Marine Equipment3"],
+  brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/sailor_6248_vhf.pdf",
+
+  shortDescription: "High-performance gas detection equipment for marine applications",
+
+  description:
+    "With competitive value, introduced to ensure availability to all professional vessels, the new generation SAILOR 6210 VHF still retain the same premium, rugged feel of previous generations, but with improvements across the board. Designed with ease-of-use in mind, the SAILOR 6210 VHF belong at the helm of any vessel crewed by professionals."
+  ,features: ["", ""],
+
+  specs: [
+    { label: "Manufacturer", value: "COBHAM" },
+    { label: "Model", value: "SAILOR 6248" },
+    { label: "Weight", value: "3 kg" },
+  ],
+
+  inStock: true,
+},
+ {
+  id: "marine-engine-004",
+  name: "Fixed VHF2",
+  category: "Marine Equipment",
+  price: 500,
+  image: img["Marine Equipment4"],
+  brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/sailor_6210_6215_vhf_dsc_class_d_lo.pdf",
+
+  shortDescription: "High-performance gas detection equipment for marine applications",
+
+  description:
+    "With competitive value, introduced to ensure availability to all professional vessels, the new generation SAILOR 6210 VHF still retain the same premium, rugged feel of previous generations, but with improvements across the board. Designed with ease-of-use in mind, the SAILOR 6210 VHF belong at the helm of any vessel crewed by professionals."
+  ,features: ["", ""],
+
+  specs: [
+    { label: "Manufacturer", value: "COBHAM" },
+    { label: "Model", value: "SAILOR 6210" },
+    { label: "Weight", value: "3 kg" },
+  ],
+
+  inStock: true,
+},
+{
+  id: "marine-engine-005",
+  name: "Fleet Broadband",
+  category: "Marine Equipment",
+  price: 900,
+  image: img["Marine Equipment5"],
+  brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/3-SAILOR-500-FleetBroadband-Product-Sheet.pdf",
+
+  shortDescription: "High-performance gas detection equipment for marine applications",
+
+  description:
+    "The COBHAM SAILOR 500 Fleet Broadband is designed for vessels and platforms with demanding requirements for connectivity. It meets the critical needs for voice and data communication of maritime and offshore professionals globally but despite its power, is a compact, lightweight solution. It provides extensive functionality including full access to bandwidth-hungry IP applications, broadband internet/intranet, e-mail, secure VPN and nine simultaneous voice lines."
+  ,features: ["", ""],
+
+  specs: [
+    { label: "Manufacturer", value: "COBHAM" },
+    { label: "Model", value: "FBB 500" },
+    { label: "Weight", value: "1 kg" },
+  ],
+
+  inStock: true,
+},
   {
     id: "port-container-001",
     name: "Container Handling System",
@@ -190,6 +376,24 @@ export const PRODUCTS: Product[] = [
     inStock: true,
   },
   {
+    id: "industrial-ppe-002",
+    name: "BATTERY CHARGER",
+    category: "Industrial Support",
+    price: 440,
+    image: img["Industrial Support2"],
+    brochure: "https://www.mastersystems.com/wp-content/uploads/2024/08/Datasheet-Skylla-Charger-EN.pdf",
+    shortDescription: "Complete protective equipment for marine industrial work",
+    description:
+      "Suitable for AC and DC supply (AC-DC and DC-DC operation) Except for the 3-phase input models, the chargers also accept a DC supply. Controlled charging Every TG Charger has a microprocessor, which accurately controls the charging in three steps. The charging process takes place in accordance with the IUoUo characteristic and charges more rapidly than other processes. Available as 24V/30A, 24V/50A, 24V/80A, 24V/100A as Skylla chargers",
+    features: ["Full Body Coverage", "ANSI Certified", "Heat Resistant", "High Visibility"],
+    specs: [
+      { label: "Manufacturer", value: "VICTRON ENERGY" },
+      { label: "Model", value: "SKYLLA TG" },
+      { label: "Weight", value: "20 kg" },
+    ],
+    inStock: true,
+  },
+  {
     id: "marine-radio-001",
     name: "VHF Marine Radio",
     category: "Marine Equipment",
@@ -248,6 +452,7 @@ export const CATEGORIES: Category[] = [
   "Diving Equipment",
   "Industrial Support",
   "Control Systems",
+  "Gas Detectors",
 ];
 
 export const getProduct = (id: string) => PRODUCTS.find((p) => p.id === id);
@@ -265,4 +470,4 @@ export const searchProducts = (query: string, limit = 6): Product[] => {
 };
 
 export const formatPrice = (n: number) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "QAR", maximumFractionDigits: 0 }).format(n);

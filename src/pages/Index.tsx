@@ -10,6 +10,7 @@ import divingImg from "@/assets/products/diving-equipment.jpg";
 import industrialImg from "@/assets/products/industrial-support.jpg";
 import controlImg from "@/assets/products/control-systems.png";
 import { ArrowRight, Award, Globe2, ShieldCheck, Truck } from "lucide-react";
+import gasDetectorImg from "@/assets/products/GasDT01.jpg";
 
 const categoryImages: Record<string, string> = {
   "Marine Equipment": marineImg,
@@ -17,6 +18,7 @@ const categoryImages: Record<string, string> = {
   "Diving Equipment": divingImg,
   "Industrial Support": industrialImg,
   "Control Systems": controlImg,
+  "Gas Detectors": gasDetectorImg,
 };
 
 const focusBullets: Record<string, string[]> = {
@@ -25,7 +27,12 @@ const focusBullets: Record<string, string[]> = {
   "Diving Equipment": ["Diving Umbilical & ROV Cable", "Control Panels & Video Systems", "Personal Gear (Helmets, Suits)", "Underwater Tools"],
   "Industrial Support": ["Welding & Fabrication Tools", "Industrial PPE & Workwear", "Fasteners & Hydraulic Hoses", "Paints, Coatings & Materials"],
   "Control Systems": ["Power & Control Panels", "ELV & Pump Control Systems", "Service & Maintenance", "Custom Solution Design"],
-};
+ "Gas Detectors": [
+    "Portable Gas Detection",
+    "Multi-Gas Monitoring",
+    "Confined Space Safety",
+    "Industrial Hazard Detection"]
+  };
 
 const testimonials = [
   "Mafjar Marine has been our trusted partner. Their reliability in supplying quality equipment and exceptional customer service have made them indispensable to our operations.",
